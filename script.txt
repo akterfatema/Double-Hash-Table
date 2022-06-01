@@ -1,0 +1,41 @@
+Good morning mam. I am abdullah al tamim and my groupmate is fatema akter. 
+The topic of our project was double hash table.
+
+Now first of all we will be introduced with hashing and double hashing.
+Hashing is an important data structure designed to solve the problems of
+ efficiently finding and storing data in an array. It is done for faster 
+access to elements. For an example hashing can search a value in constant 
+time on average. Whereas, the linear searching and the binary searching
+takes order of n and log of n times respectively.
+
+But there is a one drawback of hashing which is, collision of elements 
+during inserting. And to overocme collision, there are several methods.
+double hashing is one of them. During double hashing If a collision is found,
+then we use a modified funtion of the usual modulus funcion and a secondary
+function. In our case, our modulus function is 
+		h1(x) = element%size;
+and our Secondary function is:
+		h2(x) = r - (element % r) where r is the nearest prime number
+					   which is lower than the size.
+and finally our modified modulus function is:
+		h1'(x) = [(h1(x) + i * h2(x))%size] 
+where i is initially zero, but it will increase till size-1 to find an empty index.
+
+Let's take a quick review of the algorithms of our program. 
+First of all, in the main function we have created a menu for insertion,
+deletion, searching and displaying. 
+
+In the insert function, after scaning the value from the user we check if the
+index number which is obtained from the hash1 function is equal to the zero or not.
+If it is zero, which means there is no element in that index then we place the 
+scanned element in that index. And if the index is not equal to zero then we 
+call the modified hash1 function, which with the help of the secondary hash 
+function gives us an empty index if it is available. 
+
+Our next two options, which are searching and deleting, have almost the same 
+algorithm. Both options will use the modified hash 1 function to find the required
+key. In case of searching, if the key is found then a message will show up,
+on the other hand, for deletion, the element will be replaced by 0;
+
+So that was a short review on our project. THank you.
+
